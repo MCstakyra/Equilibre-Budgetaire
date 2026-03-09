@@ -57,13 +57,18 @@
         <input type="number" id="amountInput" placeholder="Montant (€)">
         <select id="categoryInput"> 
             <option value="">Choix de la categorie</option>
-            <option value="essentiel">Loyer</option>
-            <option value="essentiel">Facture</option>
-            <option value="essentiel">Transports</option>
-            <option value="essentiel">Courses</option>
-            <option value="essentiel">Menager (Lessive, Nettoyage, PQ)</option>
-            <option value="pleasure">Skincare (Produits de beauté & d'hygiene)</option>
-            <option value="pleasure">Petits plaisirs (Cinéma, Restaurants)</option>
+            <option value="essentiel">Essentiel</option>
+            <option value="pleasure">Plaisir</option>
+            <option value="savings">Épargne</option>
+        </select>
+        <button onclick="addExpense()">Ajouter</button>
+    </div>
+
+    <h3>Historique du mois</h3>
+    <div class="expense-list" id="expenseList">
+        </div>
+
+    <button class="btn-close-month" onclick="closeMonth()"> Cloturer le mois et transferer le reste vers l'Epargne Globale</button>
             <option value="savings">Virement vers Épargne</option>
         </select>
         <button onclick="addExpense()">Ajouter</button>
