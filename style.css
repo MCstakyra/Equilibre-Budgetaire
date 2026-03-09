@@ -1,0 +1,144 @@
+:root {
+            --primary: #4A90E2;
+            --success: #2ECC71;
+            --warning: #F1C40F;
+            --danger: #E74C3C;
+            --purple: #9B59B6;
+            --bg: #F4F7F6;
+            --card-bg: #FFFFFF;
+            --text: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .global-savings {
+            background: linear-gradient(135deg, var(--purple), #8E44AD);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.3);
+        }
+        .global-savings h2 { margin: 0 0 10px 0; font-size: 18px; text-transform: uppercase; }
+        .global-savings p { margin: 0; font-size: 36px; font-weight: bold; }
+
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .card h3 { margin: 0 0 10px 0; font-size: 13px; text-transform: uppercase; }
+        .card p { margin: 0; font-size: 22px; }
+
+        .card.income { background: var(--primary); }
+        .card.essential { background: #95A5A6; }
+        .card.pleasure { background: var(--warning); color: #333; }
+        .card.savings { background: var(--success); }
+        .card.balance { background: var(--danger); transition: 0.3s; }
+        .card.balance.positive { background: var(--success); }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        input, select, button {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        input { flex: 1; min-width: 150px; }
+        
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        button:hover { background-color: #357ABD; }
+        
+        .btn-close-month {
+            background-color: var(--purple);
+            width: 100%;
+            margin-top: 10px;
+            padding: 15px;
+            font-size: 16px;
+        }
+        .btn-close-month:hover { background-color: #8E44AD; }
+
+        .expense-list { margin-top: 20px; }
+
+        .expense-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .expense-item:last-child { border-bottom: none; }
+
+        .expense-info strong { display: block; margin-bottom: 5px; }
+        .badge {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            color: white;
+        }
+
+        .badge.essentiel { background: #95A5A6; }
+        .badge.plaisir { background: var(--warning); color: #333; }
+        .badge.economie { background: var(--success); }
+
+        .delete-btn { background: #ff6b6b; padding: 8px 12px; font-size: 12px; }
+        .delete-btn:hover { background: #fa5252; }
+        
+        .empty-state { text-align: center; color: #aaa; padding: 20px; font-style: italic; }

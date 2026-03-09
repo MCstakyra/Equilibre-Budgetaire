@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Equilibre Budgetaire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Mon Equilibre Budgetaire</h1>
+    <p class="subtitle">Gerer, economiser et se faire plaisir !</p>
+
+    <div class="global-savings">
+        <h2> Mon Épargne Globale</h2>
+        <p><span id="globalSavingsAmount">0.00</span> €</p>
+        <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: center;">
+            <input type="number" id="withdrawInput" placeholder="Montant à récupérer (€)" style="color: black; max-width: 200px;">
+            <button onclick="withdrawFromSavings()" style="background-color: white; color: var(--purple);">Piocher</button>
+        </div>
+    </div>
+
+    <div class="controls" style="background: #f8f9fa; padding: 15px; border-radius: 10px;">
+        <input type="number" id="incomeInput" placeholder="Budget de ce mois-ci (€)">
+        <button onclick="setIncome()">Définir</button>
+        <button onclick="addIncome()" style="background-color: var(--success);">+ Ajouter</button>
+    </div>
+
+    <h3>Resume du mois</h3>
+    <div class="summary-cards">
+        <div class="card income">
+            <h3>Budget Total</h3>
+            <p><span id="totalIncome">0.00</span> €</p>
+        </div>
+        <div class="card essential">
+            <h3>Essentiel</h3>
+            <p><span id="totalEssential">0.00</span> €</p>
+        </div>
+        <div class="card pleasure">
+            <h3>Plaisirs</h3>
+            <p><span id="totalPleasure">0.00</span> €</p>
+        </div>
+        <div class="card savings">
+            <h3>Epargne ce mois</h3>
+            <p><span id="totalSavings">0.00</span> €</p>
+        </div>
+        <div class="card balance" id="balanceCard">
+            <h3>Reste e vivre</h3>
+            <p><span id="totalBalance">0.00</span> €</p>
+        </div>
+    </div>
+
+    <h3>Ajouter une operation</h3>
+    <div class="controls">
+        <input type="text" id="descInput" placeholder="Ex: Loyer, Cinéma, Virement livret...">
+        <input type="number" id="amountInput" placeholder="Montant (€)">
+        <select id="categoryInput"> 
+            <option value="">Choix de la categorie</option>
+            <option value="essentiel">Loyer</option>
+            <option value="essentiel">Facture</option>
+            <option value="essentiel">Transports</option>
+            <option value="essentiel">Courses</option>
+            <option value="essentiel">Menager (Lessive, Nettoyage, PQ)</option>
+            <option value="pleasure">Skincare (Produits de beauté & d'hygiene)</option>
+            <option value="pleasure">Petits plaisirs (Cinéma, Restaurants)</option>
+            <option value="savings">Virement vers Épargne</option>
+        </select>
+        <button onclick="addExpense()">Ajouter</button>
+    </div>
+
+    <h3>Historique du mois</h3>
+    <div class="expense-list" id="expenseList">
+        </div>
+
+    <button class="btn-close-month" onclick="closeMonth()"> Cloturer le mois et transferer le reste vers l'Epargne Globale</button>
+    <button style="background-color: var(--danger); width: 100%; margin-top: 10px; padding: 10px; border: none; border-radius: 8px; color: white; cursor: pointer;" onclick="resetAll()">
+        Tout remettre à zero (Effacer toutes les donnees)</button>
+</div>
+
+<script src="script.js">
+    
+</script>
+
+</body>
+</html>
